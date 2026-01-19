@@ -1,1 +1,9 @@
 
+{
+  "name": "Plenty Wheels",
+  "short_name": "PlentyWheels",
+  "start_url": "/Plenty-wheels/index.html",
+  "display": "standalone",
+  "background_color": "#5B0A8C",
+  "theme_color": "#5B0A8C"
+}
