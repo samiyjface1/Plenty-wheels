@@ -45,7 +45,40 @@
       border-radius: 8px;
       font-weight: bold;
     }
+
+    nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #5B0A8C;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+
+nav a {
+  color: #39FF14;
+  text-decoration: none;
+  font-weight: bold;
+}
+
   </style>
+  nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #5B0A8C;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+
+nav a {
+  color: #39FF14;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 </head>
 
 <body>
@@ -55,11 +88,19 @@
 <h1>Book a Ride</h1>
 
 <div class="card">
-  <input type="text" placeholder="Pickup Location">
-  <input type="text" placeholder="Drop-off Location">
-  <input type="datetime-local">
-  <button>Submit Request</button>
+  <form action="https://formsubmit.co/booking@plentywheels.com" method="POST">
+    
+    <input type="hidden" name="_subject" value="New Plenty Wheels Booking">
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="text" name="pickup" placeholder="Pickup Location" required>
+    <input type="text" name="dropoff" placeholder="Drop-off Location" required>
+    <input type="datetime-local" name="date_time" required>
+
+    <button type="submit">Submit Request</button>
+  </form>
 </div>
+
 
 </body>
 </html>
