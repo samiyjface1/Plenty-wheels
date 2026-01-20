@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Book a Ride | Plenty Wheels</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Book a Ride | Plenty Wheels</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #5B0A8C;
-      color: #39FF14;
-      text-align: center;
-      padding-bottom: 70px;
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #5B0A8C;
+  color: #39FF14;
+  text-align: center;
+  padding-bottom: 90px;
+}
 
+.card {
+  background: white;
+  color: black;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+}
 
-    }
+input, select, button {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
 
-    .card {
-      background: white;
-      color: black;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 12px;
-    }
+button {
+  background: #39FF14;
+  font-weight: bold;
+}
 
-    input, button {
-      width: 90%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: none;
-    }
-
-    button {
-      background: #39FF14;
-      font-weight: bold;
-    }
-
-    .back {
-      display: inline-block;
-      margin: 15px;
-      padding: 10px 16px;
-      background: #39FF14;
-      color: black;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+.back {
+  display: inline-block;
+  margin: 15px;
+  padding: 10px 16px;
+  background: #39FF14;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
 
 nav {
   position: fixed;
@@ -64,48 +62,52 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
-
-
-  </style>
-
-
+</style>
 </head>
 
 <body>
 
 <a href="index.html" class="back">← Back</a>
 
-<h1>Book a Ride</h1>
+<h1>Book a Service</h1>
 
 <div class="card">
   <form action="https://formsubmit.co/booking@plentywheels.com" method="POST">
-    
+
     <input type="hidden" name="_subject" value="New Plenty Wheels Booking">
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://samiyjface1.github.io/Plenty-wheels/index.html"
+    <input type="hidden" name="_next" value="https://samiyjface1.github.io/Plenty-wheels/index.html">
 
     <input type="text" name="pickup" placeholder="Pickup Location" required>
     <input type="text" name="dropoff" placeholder="Drop-off Location" required>
     <input type="datetime-local" name="date_time" required>
-    <input type="datetime-local" name="date_time" required>
 
     <select id="service" name="service" required>
-  <option value="">Select Service</option>
-  <option value="1">Ride Share</option>
-  <option value="1.5">Delivery</option>
-  <option value="2">Senior Transport</option>
-</select>
+      <option value="">Select Service</option>
+      <option value="1">Ride Share</option>
+      <option value="1.5">Delivery</option>
+      <option value="2">Senior Transport</option>
+    </select>
 
-<p id="price" style="font-weight:bold;"></p>
-
+    <p id="price" style="font-weight:bold;"></p>
 
     <button type="submit" onclick="this.disabled=true; this.innerText='Sending...';">
-  Submit Request
-</button>
+      Submit Request
+    </button>
 
+  </form>
+</div>
 
-    
-  </form>  
+<!-- Google Maps Embed (safe, no API key) -->
+<div class="card">
+  <h3>Service Area</h3>
+  <iframe
+    src="https://www.google.com/maps?q=United+States&output=embed"
+    width="100%"
+    height="250"
+    style="border-radius:12px;border:0;"
+    loading="lazy">
+  </iframe>
 </div>
 
 <nav>
@@ -113,6 +115,7 @@ nav a {
   <a href="services.html">Services</a>
   <a href="booking.html">Book</a>
 </nav>
+
 <script>
 const serviceSelect = document.getElementById("service");
 const priceDisplay = document.getElementById("price");
@@ -130,5 +133,6 @@ serviceSelect.addEventListener("change", function () {
   priceDisplay.innerText = "Estimated Price: $" + total.toFixed(2);
 });
 </script>
+
 </body>
 </html>
