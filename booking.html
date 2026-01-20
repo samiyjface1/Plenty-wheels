@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <title>Book a Ride | Plenty Wheels</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-
 
 <style>
 body {
@@ -95,9 +93,7 @@ nav a {
 
     <button type="submit" onclick="this.disabled=true; this.innerText='Sending...';">
       Submit Request
-    <button type="button" onclick="startPayment()">
-  Pay Now
-</button>
+    </button>
 
   </form>
 </div>
@@ -105,9 +101,12 @@ nav a {
 <!-- Google Maps Embed (safe, no API key) -->
 <div class="card">
   <h3>Service Area</h3>
-  
-    <div id="map" style="height:300px;border-radius:12px;"></div>
-
+  <iframe
+    src="https://www.google.com/maps?q=United+States&output=embed"
+    width="100%"
+    height="250"
+    style="border-radius:12px;border:0;"
+    loading="lazy">
   </iframe>
 </div>
 
@@ -134,31 +133,6 @@ serviceSelect.addEventListener("change", function () {
   priceDisplay.innerText = "Estimated Price: $" + total.toFixed(2);
 });
 </script>
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-function startPayment() {
-  alert("Stripe payment will open here once connected.");
-}
-</script>
-<script>
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7,
-    center: { lat: 39.5, lng: -98.35 }
-  });
 
-  const directionsService = new google.maps.DirectionsService();
-  const directionsRenderer = new google.maps.DirectionsRenderer();
-  directionsRenderer.setMap(map);
-}
-
-window.onload = initMap;
-</script>
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-function startPayment() {
-  alert("Stripe payment will open here once connected.");
-}
-</script>
 </body>
 </html>
