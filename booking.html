@@ -113,6 +113,22 @@ nav a {
   <a href="services.html">Services</a>
   <a href="booking.html">Book</a>
 </nav>
+<script>
+const serviceSelect = document.getElementById("service");
+const priceDisplay = document.getElementById("price");
 
+serviceSelect.addEventListener("change", function () {
+  const basePrice = 10;
+  const multiplier = parseFloat(this.value);
+
+  if (!multiplier) {
+    priceDisplay.innerText = "";
+    return;
+  }
+
+  const total = basePrice * multiplier;
+  priceDisplay.innerText = "Estimated Price: $" + total.toFixed(2);
+});
+</script>
 </body>
 </html>
