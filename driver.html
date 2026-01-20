@@ -1,68 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Driver Dashboard | Plenty Wheels</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #5B0A8C;
-  color: #39FF14;
-  text-align: center;
-  padding-bottom: 90px;
-}
-
-.card {
-  background: white;
-  color: black;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #5B0A8C;
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 0;
-}
-
-nav a {
-  color: #39FF14;
-  text-decoration: none;
-  font-weight: bold;
-}
-</style>
-</head>
-
-<body>
-  <script>
-const accessCode = prompt("Enter access code:");
-
-if (accessCode !== "Plenty231611") {
-  document.body.innerHTML = "<h2>Access Denied</h2>";
-}
+<html><body>
+<script>
+if(prompt("Driver code")!=="PW-DRIVER"){document.body.innerHTML="Access Denied";}
 </script>
-
-
 <h1>Driver Dashboard</h1>
-
-<div class="card">
-  <p>No active jobs yet.</p>
-  <p>Bookings will appear here.</p>
-</div>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="booking.html">Book</a>
-</nav>
-
-</body>
-</html>
-1
+<p>No jobs assigned</p>
+</body></html>
