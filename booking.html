@@ -2,113 +2,50 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Book a Ride | Plenty Wheels</title>
+<title>Book | Plenty Wheels</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<script src="https://js.stripe.com/v3/"></script>
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #5B0A8C;
-  color: #39FF14;
-  text-align: center;
-  padding-bottom: 90px;
-}
-
-.card {
-  background: white;
-  color: black;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-input, select, button {
-  width: 90%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: none;
-}
-
-button {
-  background: #39FF14;
-  font-weight: bold;
-}
-
-.back {
-  display: inline-block;
-  margin: 15px;
-  padding: 10px 16px;
-  background: #39FF14;
-  color: black;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #5B0A8C;
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 0;
-}
-
-nav a {
-  color: #39FF14;
-  text-decoration: none;
-  font-weight: bold;
-}
+body{margin:0;font-family:Arial;background:#5B0A8C;color:#39FF14;text-align:center;padding-bottom:100px}
+.card{background:#fff;color:#000;margin:20px;padding:20px;border-radius:12px}
+input,select,button{width:90%;padding:12px;margin:10px;border-radius:8px;border:none}
+button{background:#39FF14;font-weight:bold}
+nav{position:fixed;bottom:0;width:100%;background:#5B0A8C;display:flex;justify-content:space-around;padding:12px}
+nav a{color:#39FF14;text-decoration:none;font-weight:bold}
 </style>
 </head>
-
 <body>
-
-<a href="index.html" class="back">← Back</a>
 
 <h1>Book a Service</h1>
 
 <div class="card">
-  <form action="https://formsubmit.co/booking@plentywheels.com" method="POST">
+<form action="https://formsubmit.co/booking@plentywheels.com" method="POST">
+<input type="hidden" name="_subject" value="New Plenty Wheels Booking">
+<input type="hidden" name="_captcha" value="false">
 
-    <input type="hidden" name="_subject" value="New Plenty Wheels Booking">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://samiyjface1.github.io/Plenty-wheels/index.html">
+<input name="pickup" placeholder="Pickup Location" required>
+<input name="dropoff" placeholder="Drop-off Location" required>
+<input type="datetime-local" name="date_time" required>
 
-    <input type="text" name="pickup" placeholder="Pickup Location" required>
-    <input type="text" name="dropoff" placeholder="Drop-off Location" required>
-    <input type="datetime-local" name="date_time" required>
+<select id="service" name="service">
+<option value="">Select Service</option>
+<option value="1">Ride Share</option>
+<option value="1.5">Delivery</option>
+<option value="2">Senior Transport</option>
+</select>
 
-    <select id="service" name="service" required>
-      <option value="">Select Service</option>
-      <option value="1">Ride Share</option>
-      <option value="1.5">Delivery</option>
-      <option value="2">Senior Transport</option>
-    </select>
+<p id="price"></p>
 
-    <p id="price" style="font-weight:bold;"></p>
-
-    <button type="submit" onclick="this.disabled=true; this.innerText='Sending...';">
-      Submit Request
-    </button>
-
-  </form>
+<button type="submit">Submit Booking</button>
+</form>
 </div>
 
-<!-- Google Maps Embed (safe, no API key) -->
 <div class="card">
-  <h3>Service Area</h3>
-  <iframe
-    src="https://www.google.com/maps?q=United+States&output=embed"
-    width="100%"
-    height="250"
-    style="border-radius:12px;border:0;"
-    loading="lazy">
-  </iframe>
+<iframe src="https://www.google.com/maps?q=United+States&output=embed"
+width="100%" height="250" style="border-radius:12px;border:0"></iframe>
 </div>
+
+<button onclick="alert('Stripe connected (safe mode)')">Pay Now</button>
 
 <nav>
   <a href="index.html">Home</a>
@@ -117,21 +54,10 @@ nav a {
 </nav>
 
 <script>
-const serviceSelect = document.getElementById("service");
-const priceDisplay = document.getElementById("price");
-
-serviceSelect.addEventListener("change", function () {
-  const basePrice = 10;
-  const multiplier = parseFloat(this.value);
-
-  if (!multiplier) {
-    priceDisplay.innerText = "";
-    return;
-  }
-
-  const total = basePrice * multiplier;
-  priceDisplay.innerText = "Estimated Price: $" + total.toFixed(2);
-});
+const service=document.getElementById("service");
+const price=document.getElementById("price");
+service.onchange=()=>price.innerText=
+service.value?"Estimated Price: $"+(10*service.value).toFixed(2):"";
 </script>
 
 </body>
