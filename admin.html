@@ -1,66 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Admin Panel | Plenty Wheels</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #5B0A8C;
-  color: #39FF14;
-  text-align: center;
-  padding-bottom: 90px;
-}
-
-.card {
-  background: white;
-  color: black;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #5B0A8C;
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 0;
-}
-
-nav a {
-  color: #39FF14;
-  text-decoration: none;
-  font-weight: bold;
-}
-</style>
-</head>
-
-<body>
+<html><body>
 <script>
-const accessCode = prompt("Enter access code:");
-
-if (accessCode !== "Plenty231611") {
-  document.body.innerHTML = "<h2>Access Denied</h2>";
-}
+if(prompt("Admin code")!=="PW-ADMIN"){document.body.innerHTML="Access Denied";}
 </script>
-
 <h1>Admin Panel</h1>
-
-<div class="card">
-  <p>Bookings arrive by email.</p>
-  <p>Future dashboard will appear here.</p>
-</div>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="booking.html">Book</a>
-</nav>
-
-</body>
-</html>
+<p>Bookings delivered via email</p>
+</body></html>
