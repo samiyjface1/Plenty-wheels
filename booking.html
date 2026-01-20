@@ -140,6 +140,20 @@ function startPayment() {
   alert("Stripe payment will open here once connected.");
 }
 </script>
+<script>
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 7,
+    center: { lat: 39.5, lng: -98.35 }
+  });
+
+  const directionsService = new google.maps.DirectionsService();
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  directionsRenderer.setMap(map);
+}
+
+window.onload = initMap;
+</script>
 
 </body>
 </html>
