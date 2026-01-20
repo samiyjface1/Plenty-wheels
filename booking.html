@@ -87,7 +87,17 @@ nav a {
     <input type="text" name="pickup" placeholder="Pickup Location" required>
     <input type="text" name="dropoff" placeholder="Drop-off Location" required>
     <input type="datetime-local" name="date_time" required>
-    
+    <input type="datetime-local" name="date_time" required>
+
+    <select id="service" name="service" required>
+  <option value="">Select Service</option>
+  <option value="1">Ride Share</option>
+  <option value="1.5">Delivery</option>
+  <option value="2">Senior Transport</option>
+</select>
+
+<p id="price" style="font-weight:bold;"></p>
+
 
     <button type="submit" onclick="this.disabled=true; this.innerText='Sending...';">
   Submit Request
