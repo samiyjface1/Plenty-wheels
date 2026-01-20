@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="manifest" href="manifest.json">
   <meta charset="UTF-8">
   <title>Plenty Wheels</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,6 +77,11 @@ nav a {
   <a href="services.html">Services</a>
   <a href="booking.html">Book</a>
 </nav>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
 
 </body>
 </html>
