@@ -1,12 +1,3 @@
-
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open("plenty-wheels").then(cache =>
-      cache.addAll([
-        "index.html",
-        "booking.html",
-        "services.html"
-      ])
-    )
-  );
+self.addEventListener("install",e=>{
+e.waitUntil(caches.open("pw").then(c=>c.addAll(["index.html","booking.html"])))
 });
