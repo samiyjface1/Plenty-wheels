@@ -93,7 +93,9 @@ nav a {
 
     <button type="submit" onclick="this.disabled=true; this.innerText='Sending...';">
       Submit Request
-    </button>
+    <button type="button" onclick="startPayment()">
+  Pay Now
+</button>
 
   </form>
 </div>
@@ -132,6 +134,12 @@ serviceSelect.addEventListener("change", function () {
   const total = basePrice * multiplier;
   priceDisplay.innerText = "Estimated Price: $" + total.toFixed(2);
 });
+</script>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+function startPayment() {
+  alert("Stripe payment will open here once connected.");
+}
 </script>
 
 </body>
