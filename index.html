@@ -1,1 +1,38 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Plenty Wheels</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<style>
+body{margin:0;font-family:Arial;background:#5B0A8C;color:#39FF14;text-align:center;padding-bottom:80px}
+.card{background:#fff;color:#000;margin:20px;padding:20px;border-radius:12px}
+nav{position:fixed;bottom:0;width:100%;background:#5B0A8C;display:flex;justify-content:space-around;padding:12px}
+nav a{color:#39FF14;text-decoration:none;font-weight:bold}
+</style>
+</head>
+<body>
+
+<h1>Plenty Wheels</h1>
+<p>Transportation Without Limits</p>
+
+<div class="card">
+  <a href="booking.html"><strong>🚗 Book a Service</strong></a>
+</div>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="booking.html">Book</a>
+</nav>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
